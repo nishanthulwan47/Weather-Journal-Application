@@ -46,7 +46,6 @@ app.get('/all', sendData)
 
 function sendData (req, res) {
     res.send('GET: Weather application');
-    res.send(projectData);
     console.log(sendData);
 };
 
@@ -56,7 +55,6 @@ const data = [];
 app.post('/addWeatherInfo', addInfo)
 
 function addInfo (req,res) {
-    console.log(req.body)
-    data.push(req.body)
-    res.send('POST received')
+    Object.assign(projectData, req.body);
+    res.send(projectData)
 }
