@@ -1,7 +1,7 @@
 /* Global Variables */
 
-let baseURL = 'api.openweathermap.org/data/2.5/weather?zip';
-let apiKey = 'a3a586ae26dc8f40ded3ce9fe00e0f95';
+let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+const apiKey = 'XXXX';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -20,7 +20,7 @@ function performAction(e) {
 
 retrieveData(baseURL, zipCode, apiKey)
 .then(function(userData) {
-    postData('/add', {date:newDate, temp:userData.main.temp, content})
+    postData('/addWeatherInfo', {date:newDate, temp:userData.main.temp, content})
 }).then(function(newData) {
     updateUI()
 });
@@ -28,7 +28,10 @@ retrieveData(baseURL, zipCode, apiKey)
 }
 
 const retrieveData = async (baseURL, zipCode, apiKey) => {
-    const res = await fetch(baseURL + zipCode + apiKey);
+    const res = await fetch(baseURL + zipCode + "&appid="+ apiKey + "&units=metric"); //Celcius
+
+    const res = await fetch(baseURL + zipCode + "&appid="+ apiKey + "&units=imperial"); //Fahrenheit
+
     try {
         const userData = await res.json();
         return userData;
