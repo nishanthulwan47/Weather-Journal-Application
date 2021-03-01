@@ -20,7 +20,7 @@ function performAction(e) {
 
 getTemp(baseURL, zipCode, apiKey)
 .then(function(userData) {
-    postData('/add', {date:newDate, temp:userData.main.temp, content})
+    postData('/add', {date:newDate, temp:userData.temp, content})
 }).then(function(newData) {
     updateUI()
 });
