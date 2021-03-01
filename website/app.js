@@ -18,7 +18,7 @@ function performAction(e) {
     const zipCode = document.getElementById('zip').value;
     const content = document.getElementById('feelings').value;
 
-getTemp(baseURL, zipCode, apiKey)
+retrieveData(baseURL, zipCode, apiKey)
 .then(function(userData) {
     postData('/add', {date:newDate, temp:userData.temp, content})
 }).then(function(newData) {
@@ -27,7 +27,7 @@ getTemp(baseURL, zipCode, apiKey)
 
 }
 
-const getTemp = async (baseURL, zipCode, apiKey) => {
+const retrieveData = async (baseURL, zipCode, apiKey) => {
     const res = await fetch(baseURL + zipCode + apiKey);
     try {
         const userData = await res.json();
