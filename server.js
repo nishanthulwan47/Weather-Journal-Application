@@ -9,7 +9,7 @@ const express = require('express');
 
 const app = express();
 
-
+/*Depedencies */
 
 const bodyParser = require('body-parser')
 
@@ -38,3 +38,25 @@ function listening() {
     console.log('server runnning');
     console.log(`running on localhost: ${port}`);
 };
+
+
+//Get Request
+
+app.get('/all', sendData)
+
+function sendData (req, res) {
+    res.send('GET: Weather application');
+    res.send(projectData);
+    console.log(sendData);
+};
+
+// Make an array that can hold the data
+
+const data = [];
+app.post('/addWeatherInfo', addInfo)
+
+function addInfo (req,res) {
+    console.log(req.body)
+    data.push(req.body)
+    res.send('POST received')
+}
