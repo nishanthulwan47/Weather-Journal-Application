@@ -20,7 +20,7 @@ function performAction(e) {
 
 retrieveData(baseURL, zipCode, apiKey)
 .then(function(userData) {
-    postData('/add', {date:newDate, temp:userData.temp, content})
+    postData('/add', {date:newDate, temp:userData.main.temp, content})
 }).then(function(newData) {
     updateUI()
 });
