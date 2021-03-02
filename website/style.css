@@ -8,12 +8,38 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
+    background: red;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+}
+
+#zip{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+#feeling{
+    text-align: center;
+}
+
+#zipcode{
+    text-align: center;
+}
+
+#feelings{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#generate{
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .holder{

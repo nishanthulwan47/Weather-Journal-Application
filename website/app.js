@@ -30,8 +30,6 @@ retrieveData(baseURL, zipCode, apiKey)
 const retrieveData = async (baseURL, zipCode, apiKey) => {
     const res = await fetch(baseURL + zipCode + "&appid="+ apiKey + "&units=metric"); //Celcius
 
-    const res = await fetch(baseURL + zipCode + "&appid="+ apiKey + "&units=imperial"); //Fahrenheit
-
     try {
         const userData = await res.json();
         return userData;
