@@ -46,7 +46,7 @@ app.get('/all', sendData)
 
 function sendData (req, res) {
     res.send('GET: Weather application');
-    console.log(sendData);
+    res.send(projectData);
 };
 
 // Make an array that can hold the data
